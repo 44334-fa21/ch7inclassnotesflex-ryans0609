@@ -16,6 +16,9 @@ header, h1, #wrapper{ margin-top: 0; }
 			margin: auto;
             color: #330000;
 } 
+    #demo { display: flex;
+            flex-direction: row;
+    }
 h1, h2 { color: #003300; }
 header { background-image: url(header.jpg);
          background-repeat: no-repeat;  	
@@ -45,16 +48,25 @@ footer { text-align: center;
 		 color: #003300;
 		 padding: 2.5%;
 }
+    nav { flex: 7;}
+    main { flex: 1;}
+    aside { flex: 2;}
+    
 @media only screen and (max-width: 1024px) {
             body { margin: 0; padding: 0; } 
             #wrapper { width: auto; margin: 0; }
 		    h1 { font-size: 200%; }
 			nav li { padding: 0 0.5em; 
 				     font-size: 1.2em; 	}
+    #demo { flex-direction: column;}
+    nav ul {display: flex;
+            flex-direction: row;
+            justify-content: center; }
 			
 }		
 @media only screen and (max-width: 768px) {
-         	
+    nav {order: 1; }
+    nav ul {flex-wrap: wrap;}
 }
 header, main, nav, footer, figure, figcaption { display: block; }
 </style>
@@ -64,7 +76,7 @@ header, main, nav, footer, figure, figcaption { display: block; }
   <header>
     <h1>Casita Sedona</h1>
   </header>  
-  <div>
+  <div id="demo">
   <nav>
     <ul>
 	 <li><a href="index.html">Home</a></li>
